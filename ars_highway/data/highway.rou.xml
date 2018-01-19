@@ -1,9 +1,11 @@
 <routes>
-         <vType acceleration="2.6" deceleration="4.5" guiShape="passenger" id="self_car" impatience="0.0" length="5.0" maxSpeed="70.0" minGap="2.5" sigma="0.5" speedFactor="10" vClass="passenger"/> "
-        
+    <vType acceleration="2.6" deceleration="4.5" guiShape="passenger" id="self_car" impatience="0.0" length="5.0" maxSpeed="100" minGap="2.5" sigma="0.5" speedFactor="10" vClass="passenger"/> "
+    <vType acceleration="2.6" deceleration="4.5" guiShape="passenger" id="slow_car" impatience="0.0" length="5.0" maxSpeed="20" minGap="2.5" sigma="0.5" speedFactor="1" vClass="passenger"/> "
+    <vType acceleration="2.6" deceleration="4.5" guiShape="passenger" id="car" impatience="0.0" length="5.0" maxSpeed="25" minGap="2.5" sigma="0.5" speedFactor="1" vClass="passenger"/> "
+    <vType acceleration="2.6" deceleration="4.5" guiShape="passenger" id="fast_car" impatience="0.0" length="5.0" maxSpeed="30" minGap="2.5" sigma="0.5" speedFactor="1" vClass="passenger"/> "
 
-        <route id="1to3" edges="1to2 2to3" />
-         <vehicle  color="1,0,0" depart="0.0" id="AUTO" route="1to3" type="self_car"/> 
-    
-        
+    <route id="1to3" edges="1to2 2to3" />
+
+    <vehicle  color="1,1,0" depart="0.0" departSpeed="max" id="car1" route="1to3" type="slow_car"/>
+    <vehicle  color="1,0,0" depart="1" id="AUTO" route="1to3" type="self_car"/>
 </routes>

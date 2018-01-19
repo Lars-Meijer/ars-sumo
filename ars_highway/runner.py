@@ -25,13 +25,21 @@ import traci
 def run():
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
+        began = False
         if VEH_ID in traci.vehicle.getIDList():
-            traci.vehicle.setSpeed(VEH_ID, 12)
+            began = True
+            traci.vehicle.setSpeedMode(VEH_ID, 0)
+            traci.vehicle.setSpeed(VEH_ID, 30)
             lane = traci.vehicle.getLaneID(VEH_ID);
             print(traci.lane.getMaxSpeed(lane));
             print(traci.vehicle.getSpeed(VEH_ID))
             print(traci.vehicle.getDistance(VEH_ID))
-    traci.close()
+            print(traci.vehicle.getLeader(VEH_ID))
+        elif began:
+            print("Collision detected")
+
+
+    # traci.close()
     sys.stdout.flush()
 
 

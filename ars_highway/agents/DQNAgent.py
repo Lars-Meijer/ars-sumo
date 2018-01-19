@@ -22,6 +22,7 @@ from keras.optimizers import Adam
 from keras.utils import plot_model
 from keras import initializers
 
+
 import environment
 import matplotlib.pyplot as plt
 
@@ -32,8 +33,8 @@ File is based on the tutorial of
 
 # constant values
 EPISODES    = 10000
-BATCH_SIZE  = 32
-MAX_STEPS   = 100
+BATCH_SIZE  = 64
+MAX_STEPS   = 200
 
 
 class DQNAgent:
@@ -41,7 +42,7 @@ class DQNAgent:
         self.state_size = state_size
         self.action_size = action_size
         self.memory = deque(maxlen=2000)
-        self.gamma = 0.8  # discount rate
+        self.gamma = 0.95  # discount rate
         self.epsilon = 1.0  # exploration rate
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.999
@@ -124,16 +125,22 @@ def trainOrTest(batch_size, episodes, training):
 
 
 def plotResults():
+    # Complete the result, safe the environment
     env.reset()
+
     leg = []
     for i, episode in enumerate(env.result):
         plt.plot(episode)
         leg.append('episode %d' % (i+1))
 
     plt.legend(leg, loc='upper left')
+    plt.axes().set_ylim(0, 110)
     plt.xlabel('Time (0.1s/step)')
-    plt.ylabel('Speed (m/s)')
+    plt.ylabel('Distance (m)')
     plt.show()
+
+    res = np.asarray(env.result)
+    np.savetxt("result.csv", res, delimiter=",", fmt='%8s')
 
 
 if __name__ == "__main__":
@@ -144,10 +151,13 @@ if __name__ == "__main__":
 
     env.log = False
     env.test = False
+    env.start(gui=False)
     trainOrTest(BATCH_SIZE, EPISODES, training=True)
+    env.close()
 
     env.log = True
     env.test = True
+    env.start(gui=True)
     trainOrTest(BATCH_SIZE, episodes=5, training=False)
 
     plotResults()

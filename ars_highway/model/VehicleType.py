@@ -78,7 +78,7 @@ class VehicleType:
         self.vClass = VClass.PASSENGER
         self.guiShape = GuiShape.PASSENGER
         self.impatience = 0.0
-        self.speedFactor = 10
+        self.speedFactor = 1
 
     def printXML(obj):
         xmlString = "<vType"

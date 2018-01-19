@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 11/27/2017 11:02:24 AM by SUMO gui Version 0.30.0
+<!-- generated on 9-1-2018 13:38:07 by SUMO gui Version 0.31.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
@@ -21,7 +21,7 @@
     </time>
 
     <processing>
-        <collision.action value="warn"/>
+        <collision.action value="remove"/>
         <collision.check-junctions value="true"/>
         <time-to-teleport value="-1"/>
     </processing>
@@ -31,17 +31,19 @@
     </report>
 
     <traci_server>
-        <remote-port value="64166"/>
+        <remote-port value="50108"/>
     </traci_server>
 
     <gui_only>
         <quit-on-end value="true"/>
         <start value="true"/>
+        <tracker-interval value="0.1"/>
     </gui_only>
 
 </configuration>
 -->
 
 <tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
-    <tripinfo id="AUTO" depart="0.00" departLane="1to2_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="48.70" arrivalLane="2to3_0" arrivalPos="250.00" arrivalSpeed="12.00" duration="48.70" routeLength="495.00" waitSteps="1" timeLoss="18.93" rerouteNo="0" devices="tripinfo_AUTO" vType="self_car" speedFactor="10.00" vaporized=""/>
+    <tripinfo id="AUTO" depart="1.00" departLane="1to2_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="2.30" arrivalLane="1to2_0" arrivalPos="44.10" arrivalSpeed="30.00" duration="1.30" routeLength="39.00" waitSteps="0" timeLoss="0.91" rerouteNo="0" devices="tripinfo_AUTO" vType="self_car" speedFactor="10.00" vaporized="0"/>
+    <tripinfo id="car1" depart="0.00" departLane="1to2_0" departPos="5.10" departSpeed="20.00" departDelay="0.00" arrival="2.30" arrivalLane="1to2_0" arrivalPos="50.96" arrivalSpeed="19.88" duration="2.30" routeLength="45.86" waitSteps="0" timeLoss="0.00" rerouteNo="0" devices="tripinfo_car1" vType="slow_car" speedFactor="1.00" vaporized="0"/>
 </tripinfos>

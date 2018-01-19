@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 11/15/17 13:26:40 by SUMO netconvert Version 0.30.0
+<!-- generated on 12/07/17 11:23:48 by SUMO netconvert Version 0.31.0
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
@@ -19,24 +19,24 @@
 
 <net version="0.27" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
 
-    <location netOffset="250.00,0.00" convBoundary="0.00,0.00,500.00,0.00" origBoundary="-250.00,0.00,250.00,0.00" projParameter="!"/>
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,5000.00,0.00" origBoundary="0.00,0.00,5000.00,0.00" projParameter="!"/>
 
     <edge id=":2_0" function="internal">
-        <lane id=":2_0_0" index="0" speed="2.10" length="0.10" shape="250.00,-1.65 250.00,-1.65"/>
+        <lane id=":2_0_0" index="0" speed="30" length="0.10" shape="2500.00,-1.65 2500.00,-1.65"/>
     </edge>
 
     <edge id="1to2" from="1" to="2" priority="-1">
-        <lane id="1to2_0" index="0" speed="10.0" length="250.00" shape="0.00,-1.65 250.00,-1.65"/>
+        <lane id="1to2_0" index="0" speed="30" length="2500.00" shape="0.00,-1.65 2500.00,-1.65"/>
     </edge>
     <edge id="2to3" from="2" to="3" priority="-1">
-        <lane id="2to3_0" index="0" speed="10.0" length="250.00" shape="250.00,-1.65 500.00,-1.65"/>
+        <lane id="2to3_0" index="0" speed="30" length="2500.00" shape="2500.00,-1.65 5000.00,-1.65"/>
     </edge>
 
     <junction id="1" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,-0.05 0.00,-3.25"/>
-    <junction id="2" type="priority" x="250.00" y="0.00" incLanes="1to2_0" intLanes=":2_0_0" shape="250.00,-0.05 250.00,-3.25 250.00,-0.05">
+    <junction id="2" type="priority" x="2500.00" y="0.00" incLanes="1to2_0" intLanes=":2_0_0" shape="2500.00,-0.05 2500.00,-3.25 2500.00,-0.05">
         <request index="0" response="0" foes="0" cont="0"/>
     </junction>
-    <junction id="3" type="dead_end" x="500.00" y="0.00" incLanes="2to3_0" intLanes="" shape="500.00,-3.25 500.00,-0.05"/>
+    <junction id="3" type="dead_end" x="5000.00" y="0.00" incLanes="2to3_0" intLanes="" shape="5000.00,-3.25 5000.00,-0.05"/>
 
     <connection from="1to2" to="2to3" fromLane="0" toLane="0" via=":2_0_0" dir="s" state="M"/>
 
