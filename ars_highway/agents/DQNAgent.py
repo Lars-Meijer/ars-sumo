@@ -140,7 +140,7 @@ def plotResults():
     plt.show()
 
     res = np.asarray(env.result)
-    np.savetxt("result2.csv", res, delimiter=",", fmt='%8s')
+    np.savetxt("result.csv", res, delimiter=",", fmt='%8s')
 
 
 if __name__ == "__main__":
